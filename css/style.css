@@ -1,0 +1,201 @@
+/* 🌿 ヘッダーのスタイル */
+header {
+  display: flex;
+  align-items: flex-start;  /* 垂直方向に中央揃え */
+  justify-content: flex-start; /* 左寄せに配置 */
+  background-color: #4CAF50; /* ヘッダーの背景色 */
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;  /* ヘッダー下部に余白 */
+}
+
+/* ロゴ画像のスタイル */
+#logo {
+  width: 150px;  /* ロゴ画像の幅を大きく */
+  height: auto;  /* 高さは自動調整 */
+  margin-right: 30px; /* ロゴとテキストの間隔を調整 */
+}
+
+/* ヘッダーのテキスト部分のスタイル */
+#header-text {
+  flex-grow: 1;  /* ヘッダー内でテキスト部分が空いているスペースを占める */
+  color: white;
+}
+
+/* サブタイトル（h2）のスタイル */
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;  /* サブタイトルと使い方の間に余白 */
+}
+
+/* 説明文のセクション */
+#steps {
+  display: flex;  /* 横並びにする */
+  justify-content: space-between;  /* スペースを均等に配置 */
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#steps h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* 各ステップのスタイル */
+.step {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 30%;  /* 各ステップの幅を均等に */
+  text-align: center;
+}
+
+.step h4 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #4CAF50;
+}
+
+.step p {
+  font-size: 12px;
+  color: #555;
+}
+
+/* 月と年度選択ボックスのスタイル */
+select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 年度選択ボックスと月選択ボックスを横並びにする */
+#year-select, #month-select {
+  margin: 10px;
+  display: inline-block;
+}
+
+/* カレンダーのスタイル */
+#calendar-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* 📆 カレンダーの枠 */
+#calendar-container {
+  background-color: #4CAF50;  /* 背景色は緑 */
+  background-image: url('/assets/images/background.png');  /* 背景画像を指定 */
+  background-size: cover;  /* 画像を枠全体にフィットさせる */
+  background-position: center;  /* 画像の位置を中央に設定 */
+  background-repeat: no-repeat;  /* 画像の繰り返しを防止 */
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+  position: relative; /* 擬似要素を配置するために相対位置に設定 */
+}
+
+/* 擬似要素でオーバーレイを追加 */
+#calendar-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);  /* 白色のオーバーレイ、透明度0.8 */
+  z-index: 1;  /* 背景画像より前に表示 */
+  border-radius: 15px;
+}
+
+/* 📅 カレンダーのグリッド配置 */
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 10px;
+  position: relative; /* カレンダーの内容がオーバーレイより前に表示されるように */
+  z-index: 2;  /* オーバーレイより前に表示 */
+}
+
+
+/* 🗓 曜日 */
+.weekday {
+  font-weight: bold;
+  color: #2E7D32;
+  background-color: #C8E6C9;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+/* 📌 日付セル */
+.day {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 🚀 選択された日（夜ご飯いらない日） */
+.day.selected {
+  background-color: #D32F2F;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(211, 47, 47, 0.3);
+}
+
+/* フッターのスタイル */
+footer {
+  background-color: #4CAF50;  /* 背景色 */
+  color: white;  /* テキスト色 */
+  text-align: center;  /* テキスト中央揃え */
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 30px;  /* 上部に少し余白 */
+}
+
+footer a {
+  color: white;  /* リンクの色 */
+  text-decoration: none;  /* リンクの下線を削除 */
+}
+
+footer a:hover {
+  text-decoration: underline;  /* リンクにホバーした時の下線 */
+}
+
+/* ご意見フォームリンクを青色に設定 */
+.feedback-link {
+  color: rgba(0, 0, 255, 0.765);  /* 青色に設定 */
+  text-decoration: none;  /* リンクの下線を削除 */
+}
+
+.feedback-link:hover {
+  color: darkblue;  /* ホバー時に少し暗い青色に変更 */
+  text-decoration: underline;  /* ホバー時に下線を追加 */
+}

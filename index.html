@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No Dinner Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <!-- ロゴ画像を左側に配置 -->
+    <img src="/assets/images/logo.png" alt="No Dinner Planner Logo" id="logo" />
+    <!-- テキストを横に表示 -->
+    <div id="header-text">
+      <h2>ご飯不要日カレンダー作成ツール</h2>
+      <section id="steps">
+        <div class="step">
+          <h4>STEP1</h4>
+          <p>月を変更すると、その月のカレンダーが表示されます。</p>
+        </div>
+        <div class="step">
+          <h4>STEP2</h4>
+          <p>ご飯がいらない日をクリックすると、赤色に変更されます。</p>
+        </div>
+        <div class="step">
+          <h4>STEP3</h4>
+          <p>スクリーンショットを撮って保存してください。</p>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <!-- 年度選択のセレクトボックス -->
+  <select id="year-select">
+    <option value="2025">2025年</option>
+    <option value="2026">2026年</option>
+    <option value="2027">2027年</option>
+    <option value="2028">2028年</option>
+    <option value="2029">2029年</option>
+    <!-- 必要に応じて他の年度を追加 -->
+  </select>
+
+  <!-- 月選択のセレクトボックス -->
+  <select id="month-select">
+    <option value="0">1月</option>
+    <option value="1">2月</option>
+    <option value="2">3月</option>
+    <option value="3">4月</option>
+    <option value="4">5月</option>
+    <option value="5">6月</option>
+    <option value="6">7月</option>
+    <option value="7">8月</option>
+    <option value="8">9月</option>
+    <option value="9">10月</option>
+    <option value="10">11月</option>
+    <option value="11">12月</option>
+  </select>
+
+  <section id="calendar-container">
+    <div id="calendar"></div>
+  </section>
+
+  <footer>
+    <p><a href="https://forms.gle/PP5CBit5WBcKDC8t7" class="feedback-link">ご意見フォーム</a></p>
+    <p>Copyright (C) 2025 <a href="https://github.com/ohtakumi/" target="_blank">ohtakumi</a> All Rights Reserved.</p>
+  </footer>  
+
+  <script src="js/script.js"></script>
+</body>
+</html>
