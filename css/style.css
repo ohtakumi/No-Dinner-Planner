@@ -31,6 +31,23 @@ h2 {
   margin-bottom: 10px;  /* サブタイトルと使い方の間に余白 */
 }
 
+/* 📱 スマホや小さな画面用 */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #logo {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
 /* 説明文のセクション */
 #steps {
   display: flex;  /* 横並びにする */
@@ -68,6 +85,18 @@ h2 {
 .step p {
   font-size: 12px;
   color: #555;
+}
+
+/* 📱 スマホや小さな画面用 */
+@media (max-width: 768px) {
+  #steps {
+    flex-direction: column;
+  }
+
+  .step {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 /* 月と年度選択ボックスのスタイル */
@@ -123,6 +152,14 @@ select {
   background-color: rgba(255, 255, 255, 0.8);  /* 白色のオーバーレイ、透明度0.8 */
   z-index: 1;  /* 背景画像より前に表示 */
   border-radius: 15px;
+}
+
+/* 📱 スマホや小さな画面用 */
+@media (max-width: 768px) {
+  #calendar-container {
+    max-width: 90%;
+    padding: 15px;
+  }
 }
 
 /* 📅 カレンダーのグリッド配置 */
