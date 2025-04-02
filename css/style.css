@@ -230,36 +230,82 @@ footer a:hover {
   text-decoration: underline;  /* ホバー時に下線を追加 */
 }
 
-/* スマホサイズ対応 */
+/* 画面サイズに応じたレスポンシブデザイン */
 @media (max-width: 768px) {
-  /* 年度選択ボックスと月選択ボックスを縦並びにして中央揃え */
-  #year-select, #month-select {
-    margin: 10px auto;
-    display: block;
-    width: 90%; /* 幅を90%に調整 */
+  /* ヘッダーの調整 */
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #logo {
+    margin: 0 0 15px 0; /* ロゴの下に余白を追加 */
+    width: 120px; /* ロゴのサイズを縮小 */
+  }
+
+  #header-text {
+    flex-grow: unset; /* フレックスの成長を無効化 */
+    width: 100%; /* テキスト部分を幅いっぱいに */
+  }
+
+  h2 {
+    font-size: 24px; /* サブタイトルのフォントサイズを調整 */
   }
 
   /* ステップ説明を縦並びに変更 */
   #steps {
-    flex-direction: column; /* 横並びから縦並びに変更 */
-    align-items: center; /* 中央揃え */
+    flex-direction: column;
+    align-items: center;
   }
 
   .step {
     width: 90%; /* 各ステップの幅を90%に調整 */
-    margin-bottom: 15px; /* ステップ間の余白を増やす */
+    margin-bottom: 15px;
   }
 
-  /* カレンダーの幅を調整 */
+  /* 年度選択ボックスと月選択ボックスの調整 */
+  #year-select, #month-select {
+    width: 90%; /* 幅を90%に調整 */
+    margin: 10px auto;
+    display: block;
+  }
+
+  /* カレンダーの調整 */
   #calendar-container {
-    max-width: 90%; /* 幅を90%に調整 */
-    padding: 15px; /* 内側の余白を少し減らす */
+    max-width: 90%; /* カレンダーの幅を90%に調整 */
+    padding: 15px;
   }
 
-  /* 日付セルのサイズを調整 */
   .day {
-    width: 40px;
+    width: 40px; /* 日付セルの幅を縮小 */
     height: 40px;
-    font-size: 12px; /* フォントサイズを小さく */
+    font-size: 12px; /* フォントサイズを縮小 */
+  }
+
+  /* フッターの調整 */
+  footer {
+    font-size: 12px; /* フッターのフォントサイズを縮小 */
+  }
+}
+
+@media (max-width: 480px) {
+  /* より小さい画面向けの調整 */
+  h2 {
+    font-size: 20px; /* サブタイトルのフォントサイズをさらに縮小 */
+  }
+
+  .day {
+    width: 35px; /* 日付セルの幅をさらに縮小 */
+    height: 35px;
+    font-size: 10px; /* フォントサイズをさらに縮小 */
+  }
+
+  #steps {
+    padding: 10px; /* ステップ説明の余白を縮小 */
+  }
+
+  .step {
+    padding: 8px; /* 各ステップの余白を縮小 */
   }
 }
