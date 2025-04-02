@@ -31,23 +31,6 @@ h2 {
   margin-bottom: 10px;  /* サブタイトルと使い方の間に余白 */
 }
 
-/* 📱 スマホや小さな画面用 */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #logo {
-    width: 120px;
-    margin-bottom: 10px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-}
-
 /* 説明文のセクション */
 #steps {
   display: flex;  /* 横並びにする */
@@ -85,18 +68,6 @@ h2 {
 .step p {
   font-size: 12px;
   color: #555;
-}
-
-/* 📱 スマホや小さな画面用 */
-@media (max-width: 768px) {
-  #steps {
-    flex-direction: column;
-  }
-
-  .step {
-    width: 100%;
-    margin-bottom: 20px;
-  }
 }
 
 /* 月と年度選択ボックスのスタイル */
@@ -154,14 +125,6 @@ select {
   border-radius: 15px;
 }
 
-/* 📱 スマホや小さな画面用 */
-@media (max-width: 768px) {
-  #calendar-container {
-    max-width: 90%;
-    padding: 15px;
-  }
-}
-
 /* 📅 カレンダーのグリッド配置 */
 #calendar {
   display: grid;
@@ -205,6 +168,36 @@ select {
   box-shadow: 0px 4px 8px rgba(211, 47, 47, 0.3);
 }
 
+/* カレンダーの下部のスタイル */
+#calendar-footer {
+  display: flex;
+  justify-content: center; /* 中央に配置 */
+  align-items: center; /* 垂直方向に中央揃え */
+  margin-top: 30px; /* カレンダーとフッターの間に十分なスペースを追加 */
+  width: 100%;
+  gap: 20px; /* ロゴとテキストの間にスペースを追加 */
+}
+
+/* フッターに表示するロゴ画像 */
+#footer-logo {
+  width: 60px; /* ロゴのサイズ調整 */
+  height: auto;
+}
+
+/* 「赤い箇所がご飯不要です」のテキスト */
+#info-text {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* アイコンとテキストの間にスペースを追加 */
+  background-color: #D32F2F; /* 赤色背景 */
+  color: white; /* 白文字 */
+  padding: 8px 15px; /* 余白を追加 */
+  border-radius: 8px; /* 角丸 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 少しシャドウを追加 */
+  font-weight: bold; /* テキストを強調 */
+  font-size: 16px; /* フォントサイズを調整 */
+}
+
 /* フッターのスタイル */
 footer {
   background-color: #4CAF50;  /* 背景色 */
@@ -235,4 +228,38 @@ footer a:hover {
 .feedback-link:hover {
   color: darkblue;  /* ホバー時に少し暗い青色に変更 */
   text-decoration: underline;  /* ホバー時に下線を追加 */
+}
+
+/* スマホサイズ対応 */
+@media (max-width: 768px) {
+  /* 年度選択ボックスと月選択ボックスを縦並びにして中央揃え */
+  #year-select, #month-select {
+    margin: 10px auto;
+    display: block;
+    width: 90%; /* 幅を90%に調整 */
+  }
+
+  /* ステップ説明を縦並びに変更 */
+  #steps {
+    flex-direction: column; /* 横並びから縦並びに変更 */
+    align-items: center; /* 中央揃え */
+  }
+
+  .step {
+    width: 90%; /* 各ステップの幅を90%に調整 */
+    margin-bottom: 15px; /* ステップ間の余白を増やす */
+  }
+
+  /* カレンダーの幅を調整 */
+  #calendar-container {
+    max-width: 90%; /* 幅を90%に調整 */
+    padding: 15px; /* 内側の余白を少し減らす */
+  }
+
+  /* 日付セルのサイズを調整 */
+  .day {
+    width: 40px;
+    height: 40px;
+    font-size: 12px; /* フォントサイズを小さく */
+  }
 }
